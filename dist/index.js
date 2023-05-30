@@ -14,12 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./src/app"));
+require('dotenv').config();
 const port = 5000;
+const nodeEnv = process.env.MONGO_URI;
 function databaseConnection() {
     return __awaiter(this, void 0, void 0, function* () {
         // mongodb://27017/taskStore
         try {
-            yield mongoose_1.default.connect("mongodb+srv://logedInUserr:HCtwliFQhB9gD7m1@cluster0.qzz0mz8.mongodb.net/?retryWrites=true&w=majority");
+            yield mongoose_1.default.connect(nodeEnv);
             console.log("Database is connected successfully. Thank you.");
             app_1.default.listen(port, () => {
                 console.log(`Task app listening on ${port}`);
