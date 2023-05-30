@@ -19,7 +19,6 @@ const port = 5000;
 const nodeEnv = process.env.MONGO_URI;
 function databaseConnection() {
     return __awaiter(this, void 0, void 0, function* () {
-        // mongodb://27017/taskStore
         try {
             yield mongoose_1.default.connect(nodeEnv);
             console.log("Database is connected successfully. Thank you.");

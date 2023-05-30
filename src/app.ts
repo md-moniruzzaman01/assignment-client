@@ -4,8 +4,6 @@ const app : Application = express();
 
 // import taskRoute from
 
-
-
 import taskRoute from './app/modules/task/task.route'
 
 app.use(cors());
