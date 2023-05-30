@@ -6,6 +6,9 @@ const nodeEnv: string = (process.env.MONGO_URI as string);
 async function databaseConnection () {
   
 
+
+
+
     try{
         await mongoose.connect(nodeEnv);
         console.log("Database is connected successfully. Thank you.");
@@ -14,7 +17,7 @@ async function databaseConnection () {
         })
         
     }catch(error){
-        // console.log(error.message as string);
+        console.log( (error as Error).message);
     }
 }
 databaseConnection(); 

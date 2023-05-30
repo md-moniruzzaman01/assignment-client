@@ -27,7 +27,7 @@ function databaseConnection() {
             });
         }
         catch (error) {
-            // console.log(error.message as string);
+            console.log(error.message);
         }
     });
 }
